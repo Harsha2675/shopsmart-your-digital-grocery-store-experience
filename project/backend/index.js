@@ -3,7 +3,7 @@ import ReactDOM from "react-dom/client";
 import "./index.css";
 import App from "./App";
 import { Provider } from "react-redux";
-import { store } from "./redux/store"; // ✅ Adjust this if your store file is somewhere else
+import store from "./redux/store"; // ✅ Ensure this matches your file path and default export
 
 import {
   createBrowserRouter,
@@ -12,18 +12,17 @@ import {
   Route
 } from "react-router-dom";
 
-import Home from "./page/Home";
-// import other pages as needed
+import Home from "./pages/Home"; // ✅ Changed from "page/Home" to "pages/Home" — make sure the folder name matches
 
 const router = createBrowserRouter(
   createRoutesFromElements(
     <Route path="/" element={<App />}>
       <Route index element={<Home />} />
-      {/* Add other <Route path="..." element={<... />} /> as needed */}
+      {/* Add other routes here */}
     </Route>
   ),
   {
-    basename: "/shopsmart-your-digital-grocery-store-experience" // ✅ For GitHub Pages routing
+    basename: "/shopsmart-your-digital-grocery-store-experience" // ✅ Needed for GitHub Pages routing
   }
 );
 
