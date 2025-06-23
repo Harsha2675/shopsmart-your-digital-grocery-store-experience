@@ -1,8 +1,8 @@
-"homepage": "https://your-username.github.io/your-repo-name"
 {
   "name": "client",
   "version": "0.1.0",
   "private": true,
+  "homepage": "https://Harsha2675.github.io/shopsmart-your-digital-grocery-store-experience",
   "dependencies": {
     "@reduxjs/toolkit": "^2.2.7",
     "@testing-library/jest-dom": "^5.17.0",
@@ -23,6 +23,8 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
@@ -45,6 +47,7 @@
     ]
   },
   "devDependencies": {
+    "gh-pages": "^6.0.0",
     "tailwindcss": "^3.4.13"
   }
 }
