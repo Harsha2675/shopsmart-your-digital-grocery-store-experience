@@ -10,30 +10,32 @@ function App() {
   const productData = useSelector((state) => state.product);
 
   useEffect(() => {
-    (async () => {
+    const fetchProductData = async () => {
       try {
-        const res = await fetch(
-          `${process.env.REACT_APP_SERVER_DOMAIN}/product`
-        );
+        const res = await fetch(`${process.env.REACT_APP_SERVER_DOMAIN}/product`);
         const resData = await res.json();
-        console.log(resData);
-        dispatch(setDataProduct(resData));
+
+        if (res.ok) {
+          dispatch(setDataProduct(resData));
+        } else {
+          throw new Error("Invalid response");
+        }
       } catch (error) {
         console.error("Error fetching product data:", error);
         toast.error("Failed to fetch product data.");
       }
-    })();
+    };
+
+    fetchProductData();
   }, [dispatch]);
-  console.log(productData);
 
   return (
     <>
-      <Toaster />
-       
+      <Toaster position="top-center" reverseOrder={false} />
 
       <div>
         <Header />
-        <main className="pt-16 bg-slate-100 min-h-[calc(100vh)]">
+        <main className="pt-16 bg-slate-100 min-h-[100vh]">
           <Outlet />
         </main>
       </div>
