@@ -30,8 +30,6 @@ import Contact from "./page/Contact";
 import Complaints from "./admin/Complaints";
 import Profile from "./customer/Profile";
 import Address from "./customer/Address";
-
-
 import Feedbacks from "./admin/Feedbacks";
 import Search from "./component/Search";
 import EditUser from "./customer/EditUser";
@@ -45,7 +43,6 @@ const router = createBrowserRouter(
   createRoutesFromElements(
     <Route path="/" element={<App />}>
       <Route index element={<Home />} />
-      {/* <Route path="menu" element={<Menu />} /> */}
       <Route path="menu" element={<Menu />} />
       <Route path="about" element={<About />} />
       <Route path="login" element={<Login />} />
@@ -64,14 +61,14 @@ const router = createBrowserRouter(
       <Route path="allcontacts" element={<Complaints />} />
       <Route path="profile" element={<Profile />} />
       <Route path="address" element={<Address />} />
-      <Route path="search" element={<Search />}/>
+      <Route path="search" element={<Search />} />
       <Route path="adminpanel" element={<AdminPanel />} />
       <Route path="feedback" element={<Feedbacks />} />
       <Route path="orders" element={<OrderList />} />
-      <Route path="myorders" element={<MyOrders />}/>
-      <Route path="review" element={<Review />}/>
-      <Route path="profileinfo" element={<ProfileInformation />}/>
-      <Route path="addresses" element={<AddressList />}/>
+      <Route path="myorders" element={<MyOrders />} />
+      <Route path="review" element={<Review />} />
+      <Route path="profileinfo" element={<ProfileInformation />} />
+      <Route path="addresses" element={<AddressList />} />
     </Route>
   )
 );
@@ -83,7 +80,4 @@ root.render(
   </Provider>
 );
 
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
 reportWebVitals();
