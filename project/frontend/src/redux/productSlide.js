@@ -1,6 +1,18 @@
-// src/redux/productSlide.js
-const productSlide = (state = [], action) => {
-  return state;
+import { createSlice } from "@reduxjs/toolkit";
+
+const initialState = {
+  productList: [],
 };
 
-export default productSlide;
+const productSlice = createSlice({
+  name: "product",
+  initialState,
+  reducers: {
+    setDataProduct: (state, action) => {
+      state.productList = action.payload;
+    },
+  },
+});
+
+export const { setDataProduct } = productSlice.actions;
+export default productSlice.reducer;
